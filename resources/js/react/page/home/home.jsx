@@ -1,6 +1,7 @@
 import axios from "axios";
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { createRef, useEffect, useState } from "react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import Select from "react-select";
 import Navbar from "../../components/navbar";
 import { useLoading } from "../../hooks/loadingContext";
 import { useUserAuth } from "../../hooks/userAuthContext";
@@ -13,9 +14,32 @@ export default function Home() {
     let redUnactive = "#470000";
     let flag = false;
 
+    const navigate = useNavigate();
+    const selectRef = createRef();
     const { getConf } = useUserAuth();
     const [image, setImage] = useState([]);
     const { setLoading } = useLoading();
+    const [option, setOption] = useState([]);
+
+    function handleSubmitSearch(e) {
+        e.preventDefault();
+        const temp = selectRef.current.getValue();
+        const val = temp[0].value;
+        navigate("/user/" + val);
+    }
+
+    useEffect(() => {
+        axios.get("/api/all-user", getConf()).then((resp) => {
+            const allUser = resp.data;
+            allUser.map((e) => {
+                const option = {
+                    value: e.id,
+                    label: e.name,
+                };
+                setOption((prev) => [...prev, option]);
+            });
+        });
+    }, []);
 
     setSlide(n, false);
 
@@ -190,8 +214,14 @@ export default function Home() {
                     />
                     <div className="search-content">
                         <h1 className="">Search Other User</h1>
-                        <input className="text-black" type="text" />
-                        <button>Search Now</button>
+                        <form onSubmit={handleSubmitSearch}>
+                            <Select
+                                className="mb-3 text-lg text-black rounded"
+                                options={option}
+                                ref={selectRef}
+                            ></Select>
+                            <button type="submit">Search Now</button>
+                        </form>
                     </div>
                 </div>
             </div>

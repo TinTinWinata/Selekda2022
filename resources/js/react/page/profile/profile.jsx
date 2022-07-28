@@ -19,6 +19,8 @@ export default function Profile() {
         logout,
     } = useUserAuth();
 
+    console.log(user);
+
     const userLocal = getUser();
 
     function handleOnChange(e) {
@@ -67,6 +69,14 @@ export default function Profile() {
         data.append("username", username);
         data.append("phone", phone);
         data.append("dob", dob);
+
+        user.name = name;
+        user.username = username;
+        user.phone = phone;
+        user.dob = dob;
+
+        setAllUser(user);
+
         updateUser(data);
     }
 

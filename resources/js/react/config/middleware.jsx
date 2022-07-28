@@ -8,6 +8,7 @@ import TopSquadDetail from "../page/detail/topSquadDetail";
 import Home from "../page/home/home";
 import Login from "../page/login/login";
 import Play from "../page/play/play";
+import LookProfile from "../page/profile/lookProfile";
 import Profile from "../page/profile/profile";
 import SquadUserView from "../page/squad/user";
 import AdminRoute from "./admin";
@@ -31,6 +32,8 @@ export default function MiddlewareRoute() {
                 <Route path="/all-squad/:id" element={<Detail />}></Route>
                 <Route path="/detail" element={<TopSquadDetail />}></Route>
                 <Route path="/top-squad" element={<TopSquadDetail />}></Route>
+                <Route path="/user/:id" element={<LookProfile />}></Route>
+
                 <Route
                     path="/create-achievement/:id"
                     element={<CreateAchievement />}

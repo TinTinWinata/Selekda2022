@@ -44,6 +44,7 @@ Route::middleware(['auth:api'])->group(function () {
     Route::post('/save-leaderboard', [BoardController::class, 'store']);
     Route::get('/all-squad', [SquadController::class, 'index']);
     Route::get('/all-squad/{n}', [SquadController::class, 'show']);
+    Route::get('/all-user', [UserController::class, 'index']);
 });
 
 // ADMIN ROUTES

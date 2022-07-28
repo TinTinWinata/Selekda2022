@@ -24,15 +24,6 @@ export function UserAuthContextProvider({ children }) {
         axios
             .put("/api/update-user/" + user.id, data, getConf())
             .then((resp) => {
-                const tempUser = user;
-                tempUser.username = data.username;
-                tempUser.name = data.name;
-                tempUser.phone = data.phone;
-                tempUser.dob = data.dob;
-
-                setUser(tempUser);
-                setUserLocal(tempUser);
-
                 toastSuccess(resp.data);
             })
             .catch((err) => {
