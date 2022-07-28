@@ -21,6 +21,8 @@ export default function Home() {
     const { setLoading } = useLoading();
     const [option, setOption] = useState([]);
 
+    const [state, setState] = useState(0);
+
     function handleSubmitSearch(e) {
         e.preventDefault();
         const temp = selectRef.current.getValue();
@@ -41,8 +43,6 @@ export default function Home() {
         });
     }, []);
 
-    setSlide(n, false);
-
     useEffect(() => {
         setLoading(true);
         axios
@@ -53,6 +53,10 @@ export default function Home() {
             })
             .catch((err) => {});
     }, []);
+
+    useEffect(() => {
+        showSlide(state);
+    }, [state]);
 
     function showSlide(n, isFade = true) {
         flag = true;
@@ -85,35 +89,25 @@ export default function Home() {
         dot.eq(n).css("background-color", redActive);
     }
 
-    setInterval(() => {
-        if (flag) return;
-
-        n += 1;
-        if (n == 4) {
-            n = 0;
-        }
-        setSlide(n);
-    }, speed * 1000);
-
     return (
         <>
             <div className="first">
                 <div className="dot">
                     <div
                         className="dot-circle"
-                        onClick={() => showSlide(0)}
+                        onClick={() => setState(0)}
                     ></div>
                     <div
                         className="dot-circle"
-                        onClick={() => showSlide(1)}
+                        onClick={() => setState(1)}
                     ></div>
                     <div
                         className="dot-circle"
-                        onClick={() => showSlide(2)}
+                        onClick={() => setState(2)}
                     ></div>
                     <div
                         className="dot-circle"
-                        onClick={() => showSlide(3)}
+                        onClick={() => setState(3)}
                     ></div>
                 </div>
 
