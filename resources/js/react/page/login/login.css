@@ -1,8 +1,7 @@
 #background {
-    background-image: url("assets/home-bg.jpg");
+    background-image: url("/assets/home-bg.jpg");
     background-size: cover;
 }
 
-#register{
-
+#register {
 }
