@@ -19,12 +19,10 @@ export default function Banner() {
             .then((resp) => {
                 setLoading(false);
                 if (resp.status === 200) {
-                    console.log(resp.data);
                     setBanner(resp.data);
                 }
             })
             .catch((err) => {
-                console.log(err);
             });
     }, [refresh]);
 

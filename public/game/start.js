@@ -11,7 +11,6 @@ aggreeForm.addEventListener("submit", aggreeClick);
 inputUsername.value = USER.username;
 inputUsername.disabled = true;
 aggreeBtn.style.display = "block";
-console.log("asd");
 
 function aggreeClick(e) {
     e.preventDefault();

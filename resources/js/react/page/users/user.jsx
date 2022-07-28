@@ -20,12 +20,10 @@ export default function ManageUser() {
             .then((resp) => {
                 setLoading(false);
                 if (resp.status === 200) {
-                    console.log(resp.data);
                     setUser(resp.data);
                 }
             })
             .catch((err) => {
-                console.log(err);
             });
     }, [refresh]);
 

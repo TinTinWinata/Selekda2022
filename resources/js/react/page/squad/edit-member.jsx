@@ -38,7 +38,6 @@ export default function EditSquadMember() {
                 toastSuccess(resp.data);
             })
             .catch((err) => {
-                console.log(err.response.data);
                 toastError(err.response.data.message);
             });
     }

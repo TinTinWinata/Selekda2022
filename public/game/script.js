@@ -56,9 +56,10 @@ function runScript() {
     let xClick = 0;
     let yClick = 0;
 
-    const music = new Audio("/assets/song.mp3");
-    const deathMusic = new Audio("/assets/death.mp3");
-    const hurtMusic = new Audio("/assets/hurt.mp3");
+    const gunMusic = document.getElementById("gun-play");
+    const music = document.getElementById("audio-play");
+    const deathMusic = document.getElementById("death-play");
+    const hurtMusic = document.getElementById("hurt-play");
 
     function playAudio() {
         music.play();
@@ -501,6 +502,8 @@ function runScript() {
             this.color = "orange";
             this.bulletSpeed = 20;
             this.death = false;
+            gunMusic.currentTime = 0;
+            gunMusic.play();
         }
 
         checkMeteorCollide(x, y) {
@@ -550,7 +553,6 @@ function runScript() {
             this.x = x;
             this.y = y;
             this.sprite = letGetPetFlying();
-            console.log(this.sprite);
             this.totalSprite = PET_CONFIG.totalSprite;
             this.w = PET_CONFIG.w * this.scale;
             this.h = PET_CONFIG.h * this.scale;

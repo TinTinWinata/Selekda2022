@@ -6,7 +6,7 @@
 }
 
 .bg-detail {
-    background-image: url("../assets/detail/bg-detail.jpg");
+    background-image: url("/assets/detail/bg-detail.jpg");
     background-size: cover;
     position: fixed;
     width: 100vw;

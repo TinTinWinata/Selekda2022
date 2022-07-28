@@ -58,14 +58,12 @@ export function UserAuthContextProvider({ children }) {
             .put("/api/change-password/" + user.id, data, getConf())
             .then((resp) => {
                 if (resp.status === 200) {
-                    console.log(resp.data);
                     toastSuccess(resp.data);
                 } else {
                     toastError(resp.data);
                 }
             })
             .catch((err) => {
-                console.log("err", err);
                 toastError(err.response.data);
             });
     }
@@ -116,7 +114,6 @@ export function UserAuthContextProvider({ children }) {
         return axios
             .get("/api/logout", getConf())
             .then((resp) => {
-                console.log(resp);
                 if (resp.status == 200) {
                     setUserLocal(null);
                     setTokenLocal(null);
@@ -141,7 +138,6 @@ export function UserAuthContextProvider({ children }) {
         return axios
             .post("/api/register", user)
             .then((resp) => {
-                console.log("resp : ", resp);
                 if (resp.status === 200) {
                     const respBack = {
                         status: true,
@@ -166,9 +162,7 @@ export function UserAuthContextProvider({ children }) {
                 password: user.password,
             })
             .then((resp) => {
-                console.log(resp);
                 if (resp.status == 200) {
-                    console.log(resp.data);
                     setUser(resp.data);
                     setUserLocal(resp.data);
                     localStorage.setItem(TOKEN_KEY, resp.data.token);

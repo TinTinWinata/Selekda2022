@@ -120,7 +120,7 @@
 .liquid {
     border-radius: 5%;
     width: 60%;
-    background-image: url("../assets/landing/liquid_bg.png");
+    background-image: url("/assets/landing/liquid_bg.png");
     height: 900px;
     background-size: cover;
     position: relative;
@@ -142,7 +142,7 @@
     margin-top: 200px;
     border-radius: 5%;
     width: 60%;
-    background-image: url("../assets/landing/fnatic_bg.png");
+    background-image: url("/assets/landing/fnatic_bg.png");
     height: 900px;
     background-size: cover;
     position: relative;

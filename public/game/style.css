@@ -200,7 +200,7 @@ input {
 }
 
 .leaderboard {
-    background-image: url("/assets/stone.png");
+    background-image: url("./assets/stone.png");
     background-size: cover;
     border: 1px solid white;
     position: relative;

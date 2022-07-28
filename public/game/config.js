@@ -1,5 +1,5 @@
-const LEADERBOARD_API = "http://localhost:8000/api/leaderboard/10";
-const SAVE_LEADERBOARD_API = "http://localhost:8000/api/save-leaderboard";
+const LEADERBOARD_API = "/api/leaderboard/10";
+const SAVE_LEADERBOARD_API = "/api/save-leaderboard";
 const DINO_URL = "./assets/Characters/dino/";
 const JACK_URL = "./assets/Characters/jack/";
 const KNIGHT_URL = "./assets/Characters/knight/";
@@ -14,6 +14,10 @@ const FOOT_1_URL = "foot_1.png";
 const FOOT_2_URL = "foot_2.png";
 const FOOT_3_URL = "foot_3.png";
 const EXPLOSION_URL = "./assets/explosion.png";
+
+const SONG_URL = "/assets/song.mp3";
+const DEATH_SOUND_URL = "/assets/death.mp3";
+const HURT_SOUND_URL = "/assets/hurt.mp3";
 
 let LEADERBOARD_DATA;
 
@@ -252,7 +256,6 @@ let letGetPetFlying = () => {
 
     for (let i = 0; i < len; i++) {
         const URL = BIRD_ALL_URL[i];
-        console.log(URL);
         const img = new Image();
         img.src = URL;
         spriteList.push(img);

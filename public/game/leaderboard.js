@@ -41,7 +41,6 @@ function saveLeaderboard(score, lifetime) {
         .then((response) => {
             if (!response.ok) {
                 const validation = response.json();
-                console.log(validation.errors);
             } else {
                 return response.json();
             }
@@ -51,7 +50,6 @@ function saveLeaderboard(score, lifetime) {
             lastText.innerHTML = resp;
         })
         .catch((err) => {
-            console.log(err);
             lastText.style.color = "red";
             lastText.innerHTML = err.response.message;
         });
@@ -103,7 +101,6 @@ function seeDetail(id) {
     const data = linearSearch(id);
     if (!data) {
         return;
-        // console.log("doesnt have data!");
     } else {
         addBlack();
         detailPopup.style.display = "block";
@@ -142,12 +139,9 @@ function getLeaderboardData() {
             return response.json();
         })
         .then((resp) => {
-            console.log(resp);
             setLeaderboardDataToHTML(resp);
         })
-        .catch(function (err) {
-            console.log("Opps, Something went wrong!", err);
-        });
+        .catch(function (err) {});
 }
 
 function getLeaderboard() {

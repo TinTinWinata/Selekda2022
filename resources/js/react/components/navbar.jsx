@@ -22,7 +22,6 @@ export default function Navbar() {
     function handleLogout() {
         logout()
             .then((resp) => {
-                console.log(resp);
                 if (resp.status) {
                     navigate("/login");
                 } else {
@@ -30,7 +29,6 @@ export default function Navbar() {
                 }
             })
             .catch((resp) => {
-                console.log(resp);
                 toastError(resp.data);
             });
     }

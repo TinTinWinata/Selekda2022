@@ -11,7 +11,6 @@ export default function Profile() {
         useUserAuth();
 
     const userLocal = getUser();
-    console.log(userLocal);
 
     function handleChangePassword(e) {
         e.preventDefault();
@@ -47,7 +46,6 @@ export default function Profile() {
     function handleLogout() {
         logout()
             .then((resp) => {
-                console.log(resp);
                 if (resp.status) {
                     navigate("/login");
                 } else {
@@ -55,7 +53,6 @@ export default function Profile() {
                 }
             })
             .catch((resp) => {
-                console.log(resp);
                 toastError(resp.data);
             });
     }

@@ -12,7 +12,7 @@ body {
 .square-image {
     width: 100%;
     height: 500px;
-    background-image: url("../assets/profile/example.jpg");
+    background-image: url("/assets/profile/example.jpg");
     background-size: cover;
 }
 
@@ -41,7 +41,7 @@ body {
 }
 
 .content {
-    background-image: url("../assets/batik.png");
+    background-image: url("/assets/batik.png");
 }
 
 .change-password-title {

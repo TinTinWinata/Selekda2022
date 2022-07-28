@@ -38,7 +38,6 @@ export default function Login() {
         const request = { email: email, password: password };
 
         login(request).then((resp) => {
-            console.log("resp : ", resp);
             if (resp.status) {
                 navigate("/home");
             } else {

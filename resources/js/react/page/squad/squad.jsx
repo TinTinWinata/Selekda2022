@@ -16,12 +16,10 @@ export default function TeamSquad() {
             .get("/api/squad", getConf())
             .then((resp) => {
                 if (resp.status === 200) {
-                    console.log(resp.data);
                     setSquad(resp.data);
                 }
             })
             .catch((err) => {
-                console.log(err);
             });
     }, [refresh]);
 
