@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
+import NotFound from "../components/404";
 import Footer from "../components/footer";
 import { useUserAuth } from "../hooks/userAuthContext";
 import CreateAchievement from "../page/achievement/create";
@@ -41,6 +42,7 @@ export default function MiddlewareRoute() {
                 <Route path="/all-squad" element={<SquadUserView />}></Route>
                 <Route path="/" element={<Home />}></Route>
                 <Route path="/*" element={<AdminRoute></AdminRoute>}></Route>
+                <Route path="/*" element={<NotFound />}></Route>
             </Routes>
             <Footer></Footer>
         </AddNavbar>

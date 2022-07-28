@@ -39,7 +39,6 @@ export default function AdminRoute() {
             <Route path="/squad-member/:id" element={<SquadMember />}></Route>
             <Route path="/create-user" element={<CreateUser />}></Route>
 
-
             <Route path="/edit-user/:id" element={<EditUser />}></Route>
             <Route
                 path="/create-squad-member/:id"

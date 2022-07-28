@@ -13,10 +13,33 @@ export default function Footer() {
                     <div className="footer-content">
                         <div className="center-footer">
                             <div className="logo flex">
-                                <img src="../assets/discord.png" alt="" />
-                                <img src="../assets/instagram.png" alt="" />
-                                <img src="../assets/twitter.png" alt="" />
-                                <img src="../assets/youtube.png" alt="" />
+                                <img
+                                    onClick={() => {
+                                        window.location.replace(
+                                            "https://www.instagram.com/tintin.wp/"
+                                        );
+                                    }}
+                                    src="/assets/instagram.png"
+                                    alt=""
+                                />
+                                <img
+                                    onClick={() => {
+                                        window.location.replace(
+                                            "https://discord.com/"
+                                        );
+                                    }}
+                                    src="/assets/discord.png"
+                                    alt=""
+                                />
+                                <img
+                                    onClick={() => {
+                                        window.location.replace(
+                                            "https://twitter.com/"
+                                        );
+                                    }}
+                                    src="/assets/twitter.png"
+                                    alt=""
+                                />
                             </div>
                         </div>
                         <p className="copyright">

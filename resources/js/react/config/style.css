@@ -122,12 +122,15 @@ input {
 
 .logo {
     width: fit-content;
-    margin-right: 40px;
+    display: flex;
+    justify-content: center;
 }
 
 .logo img {
-    padding: 10px;
     transition: all 0.3s ease;
+}
+.logo img + img {
+    margin-left: 10px;
 }
 
 .logo img:hover {
