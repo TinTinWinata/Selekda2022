@@ -1,0 +1,314 @@
+.first {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    position: relative;
+    overflow: hidden;
+}
+
+.image {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+}
+
+.active {
+    display: block;
+}
+
+.add-black {
+    width: 100%;
+    height: 100%;
+}
+
+.dot {
+    position: absolute;
+    display: flex;
+    bottom: 20px;
+    left: 20px;
+    cursor: pointer;
+}
+
+.dot .dot-circle + .dot-circle {
+    margin-left: 10px;
+}
+
+.dot-circle {
+    width: 20px;
+    border-radius: 30px;
+    height: 20px;
+}
+
+.short-text {
+    margin-top: 100px;
+    font-size: 50px;
+    width: 100%;
+    padding: 130px 0px;
+    text-align: center;
+}
+
+.short-text p {
+    font-size: 40px;
+    margin: 0 auto;
+    width: 30%;
+    margin-top: 10px;
+}
+
+.showcase {
+}
+
+.showcase-center {
+    overflow: hidden;
+    padding: 100px 0px;
+    display: flex;
+    justify-content: center;
+}
+.showcase-container {
+    display: flex;
+    align-items: center;
+}
+
+.showcase-container .showcase + .showcase {
+    margin-left: 40px;
+}
+
+.showcase img:hover {
+    width: 700px;
+}
+.showcase img {
+    width: 500px;
+    transition: all 0.5s ease;
+}
+
+.active-showcase img {
+    width: 700px;
+    transition: all 0.5s ease;
+}
+.active-showcase img:hover {
+    width: 900px;
+}
+
+.showcase p {
+    margin-bottom: 10px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.active-showcase p {
+    font-size: 60px;
+}
+
+.top-squad {
+    text-align: center;
+    padding: 130px 0px;
+}
+
+.top-squad h1 {
+    font-size: 100px;
+    margin-bottom: 50px;
+}
+
+.container-liquid {
+    width: fit-content;
+}
+
+.liquid {
+    border-radius: 5%;
+    width: 60%;
+    background-image: url("../assets/landing/liquid_bg.png");
+    height: 900px;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.liquid:hover {
+    width: 90%;
+}
+.fnatic:hover {
+    width: 90%;
+}
+
+.fnatic {
+    transition: all 0.3s ease;
+    margin-top: 200px;
+    border-radius: 5%;
+    width: 60%;
+    background-image: url("../assets/landing/fnatic_bg.png");
+    height: 900px;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex {
+    display: flex;
+}
+
+.squad-image h1 {
+    font-size: 90px;
+    margin-bottom: 10px;
+}
+
+.squad-image img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    padding-left: 30px;
+    transition: all 0.3s ease;
+}
+
+.squad-content {
+    font-size: 30px;
+    height: 30%;
+    margin: auto 50px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: 300;
+}
+
+.squad-content-h3 {
+    display: grid;
+    grid-template-columns: 150px 150px;
+    grid-row: auto auto;
+}
+.squad-content-h3 h3 + h3 {
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0px;
+}
+.search-content {
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-content h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.search-content button {
+    font-weight: 100;
+    border-radius: 10px;
+    width: 50%;
+    padding: 10px 0px;
+}
+
+.search-content input {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .container-liquid {
+        display: flex;
+        flex-direction: column;
+    }
+    .first {
+        height: 80vh;
+    }
+    .short-text {
+        font-size: 30px;
+    }
+    .short-text p {
+        font-size: 20px;
+    }
+    .showcase {
+        display: none;
+    }
+    .active-showcase {
+        display: block;
+    }
+    .squad-image img {
+        display: none;
+    }
+    .top-squad h1 {
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+    .liquid {
+        height: 350px;
+    }
+    .fnatic {
+        height: 350px;
+    }
+    .showcase img:hover {
+        width: 500px;
+    }
+    .showcase img {
+        width: 300px;
+        transition: all 0.5s ease;
+    }
+    #achievement {
+        width: 300px;
+    }
+    body {
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .top-squad h1 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    .liquid {
+        height: 220px;
+        overflow: hidden;
+    }
+    .fnatic {
+        height: 220px;
+        overflow: hidden;
+    }
+
+    .first {
+        height: 30vh;
+    }
+    #achievement {
+        width: 200px;
+    }
+    .search-content h1 {
+        font-size: 30px;
+    }
+    .search-content button {
+        font-weight: 100;
+        border-radius: 10px;
+        width: 50%;
+        padding: 10px 0px;
+    }
+
+    .squad-content {
+        font-size: 15px;
+        height: 30%;
+        margin: auto 50px;
+        text-align: center;
+        vertical-align: middle;
+        font-weight: 300;
+    }
+    .squad-content-h3 {
+        display: flex;
+        flex-direction: column;
+        grid-row: auto auto;
+    }
+    .squad-content-h3 h3 + h3 {
+    }
+
+    .search-content input {
+        padding: 5px;
+        width: 75%;
+    }
+}

@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("/assets/batik_3.png");
+    background-color: black;
+    color: white;
+}
+
+:root {
+    --red: #6a0000;
+    --redDarked: #420000;
+}
+
+button {
+    background-color: var(--red);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 0px;
+}
+
+button:hover {
+    background-color: var(--redDarked);
+}
+
+input {
+    padding: 20px;
+    background-color: white;
+    text: black;
+    border-radius: 30px;
+}
+
+.navbar {
+    height: 150px;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.navbar .container {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navbar img {
+    width: 100px;
+    height: 100px;
+}
+
+.right-navbar {
+    font-size: 30px;
+    display: flex;
+}
+.right-navbar .navbar-text + .navbar-text {
+    margin-left: 30px;
+}
+
+.navbar-text {
+    width: 100%;
+    margin: auto 0;
+}
+
+.flex {
+    display: flex;
+}
+
+.footer {
+    overflow: hidden;
+    padding: 100px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-wrap: break-word;
+    word-break: break-all;
+}
+
+.flex-end {
+    justify-content: flex-end;
+}
+
+.footer-content {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-extras {
+    width: fit-content;
+    margin-top: 20px;
+}
+
+.copyright {
+    margin-top: 20px;
+}
+
+.footer-extras p {
+    cursor: pointer;
+}
+
+.footer-extras p:hover {
+    text-decoration: underline;
+}
+
+.footer-extras p + p {
+    margin-left: 20px;
+}
+
+.logo {
+    width: fit-content;
+    margin-right: 40px;
+}
+
+.logo img {
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.logo img:hover {
+    background-color: rgba(174, 174, 174, 0.5);
+    border-radius: 30%;
+    cursor: pointer;
+}
+
+.center-footer {
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    width: 20px;
+    height: 20px;
+}
+
+/* Text */
+.fjalla-one {
+    font-family: "Fjalla One", sans-serif;
+}
+.oswald {
+    font-family: "Oswald", sans-serf;
+}
+.roboto {
+    font-family: "Roboto", sans-serif;
+}
+.smooch {
+    font-family: "Smooch Sans", sans-serif;
+}
+
+.barlow {
+    font-family: "Barlow Condensed", sans-serif;
+}
+
+.raleway {
+    font-family: "Raleway", sans-serif;
+    font-weight: 1000;
+}
+
+.photo-profile {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-image: url("/assets/profile/example_2.jpg");
+    background-size: cover;
+    cursor: pointer;
+}
+
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+
+.hamburger-svg {
+    color: white;
+    width: 100px;
+    height: 100px;
+}
+
+.hamburger-menu {
+    position: absolute;
+    width: 100vw;
+    z-index: 100;
+    background-color: black;
+    height: fit-content;
+    text-align: center;
+    display: none;
+}
+
+.hamburger-menu img {
+    width: 200px;
+    margin-top: 50px;
+}
+
+.white-line {
+    margin: 0px 20px;
+    width: 500px;
+    height: 2px;
+    background-color: white;
+}
+.footer-logo {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.footer-logo img {
+    width: 100px;
+    height: 100px;
+}
+
+.hamburger-menu .card {
+    font-weight: bold;
+    padding: 30px 0px;
+    font-size: 30px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#hamburger-x {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: white;
+}
+
+#imgPhoto {
+    width: 70px;
+    height: 70px;
+}
+
+.hamburger-menu .card:hover {
+    background-color: #0c0c0c;
+}
+
+.card {
+}
+
+@media only screen and (max-width: 1000px) {
+    .right-navbar {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .copyright {
+        font-size: 10px;
+    }
+    .footer-extras {
+        font-size: 10px;
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Selekdash</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="font.css" />
+
+        <!-- Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Gulzar&family=Sarina&display=swap"
+            rel="stylesheet"
+        />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400;600&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="icon" href="/assets/logo_white.png" />
+
+        <!-- All Script -->
+        <script src="connector.js" defer></script>
+        <script src="config.js" defer></script>
+        <script src="wheel.js" defer></script>
+        <script src="leaderboard.js" defer></script>
+        <script src="last.js" defer></script>
+        <script src="script.js" defer></script>
+        <script src="select.js" defer></script>
+        <script src="start.js" defer></script>
+    </head>
+    <body>
+        <div class="center">
+            <div class="flex flex-row">
+                <div class="container">
+                    <div id="spin-container" class="spin-container">
+                        <div class="arrow"></div>
+                        <div id="spin-wheel" class="spin-wheel">
+                            <div class="spin-hero-1">
+                                <img
+                                    id="spin-img-1"
+                                    src="assets/Characters/dino/Run (3).png"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="spin-hero-2">
+                                <img
+                                    id="spin-img-2"
+                                    src="assets/Characters/jack/Run (7).png"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="spin-hero-3">
+                                <img
+                                    id="spin-img-3"
+                                    src="assets/Characters/knight/Run (8).png"
+                                    alt=""
+                                />
+                            </div>
+                            <div class="spin-hero-4">
+                                <img
+                                    id="spin-img-4"
+                                    src="assets/Characters/redhat/Run (4).png"
+                                    alt=""
+                                />
+                            </div>
+                        </div>
+                        <button id="okay-btn">Okay</button>
+                    </div>
+
+                    <div id="add-black" class="add-black"></div>
+                    <div id="detail-popup" class="detail-popup">
+                        <svg
+                            id="close-detail-popup"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M6 18L18 6M6 6l12 12"
+                            />
+                        </svg>
+                        <table>
+                            <tr>
+                                <td>Username</td>
+                                <td>:</td>
+                                <td id="change-username-here">TinTin</td>
+                            </tr>
+                            <tr>
+                                <td>Lifetime</td>
+                                <td>:</td>
+                                <td id="change-lifetime-here">TinTin</td>
+                            </tr>
+                            <tr>
+                                <td>Score</td>
+                                <td>:</td>
+                                <td id="change-score-here">TinTin</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="lifetime"></div>
+                    <div id="writeInTheMiddle">3</div>
+                    <div id="pause" class="pause">
+                        <img src="assets/Elements/pause.png" alt="" />
+                    </div>
+                    <div class="select" id="select">
+                        <h1>Character Select</h1>
+                        <div id="select-hero" class="select-img">
+                            <img
+                                onclick="selectHero(0)"
+                                src="assets/Characters/dino/Run (3).png"
+                                alt=""
+                            />
+                            <img
+                                onclick="selectHero(1)"
+                                src="assets/Characters/jack/Run (7).png"
+                                alt=""
+                            />
+                            <img
+                                onclick="selectHero(2)"
+                                src="assets/Characters/knight/Run (8).png"
+                                alt=""
+                            />
+                            <img
+                                onclick="selectHero(3)"
+                                src="assets/Characters/redhat/Run (4).png"
+                                alt=""
+                            />
+                        </div>
+                        <button
+                            onclick="randomCharacter()"
+                            id="random-btn-character"
+                        >
+                            Random
+                        </button>
+                        <h1>Stage Select</h1>
+                        <div id="select-stage" class="select-img">
+                            <img
+                                onclick="selectStage(0)"
+                                src="assets/Stages/Stage 1/BG.png"
+                                alt=""
+                            />
+                            <img
+                                onclick="selectStage(1)"
+                                src="assets/Stages/Stage 2/BG.png"
+                                alt=""
+                            />
+                            <img
+                                onclick="selectStage(2)"
+                                src="assets/Stages/Stage 3/BG.png"
+                                alt=""
+                            />
+                            <img
+                                onclick="selectStage(3)"
+                                src="assets/Stages/Stage 4/BG.png"
+                                alt=""
+                            />
+                        </div>
+                        <div class="flex flex-column">
+                            <button
+                                onclick="randomStage()"
+                                id="random-btn-stage"
+                            >
+                                Random
+                            </button>
+                            <select id="selectLevel">
+                                <option value="easy">Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                            <button id="select-play-btn">Play</button>
+                        </div>
+                    </div>
+                    <div id="start" class="start">
+                        <h1 id="game-instruction">Game Instruction</h1>
+                        <ul>
+                            <li>Click - Destroy Meteors</li>
+                            <li>A - Left</li>
+                            <li>S - Down</li>
+                            <li>D - Right</li>
+                            <li>W - Jump</li>
+                            <li>Esc / P - Pause</li>
+                        </ul>
+                        <form id="aggree-form" class="flex flex-column">
+                            <input id="input-username" type="" />
+                            <button type="submit" id="aggree">Aggre</button>
+                        </form>
+                    </div>
+                    <div id="last" class="last flex">
+                        <div>
+                            <h1 id="game-over-text">GAME OVER!</h1>
+                            <h1 id="last-username">Username</h1>
+                            <div class="flex flex-column">
+                                <h1 id="last-lifetime">Life Time</h1>
+                                <h1 id="last-score">Score</h1>
+                                <button id="last-save">
+                                    Save Highscore Button
+                                </button>
+                                <button id="last-restart">
+                                    Restart Button
+                                </button>
+                                <button id="last-back">Back to menu</button>
+                                <p id="last-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <canvas id="myCanvas"> </canvas>
+
+                    <div class="coin">Point <span id="myCoin">0</span></div>
+                </div>
+                <div class="leaderboard">
+                    <h1>Leaderboard</h1>
+                    <p>Sort By</p>
+                    <select name="" id="leaderboard-sort">
+                        <option value="score">Score</option>
+                        <option value="name">Name</option>
+                    </select>
+                    <ul id="leaderboard-here">
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

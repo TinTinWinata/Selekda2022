@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: "Edu VIC WA NT Beginner", cursive;
+}
+
+:root {
+    --red: #940000;
+    --redDarked: #5c0101;
+    --background: #940000;
+    --darkerBackground: #5c0101;
+}
+
+ul {
+    list-style-type: none;
+}
+
+button {
+    background-color: var(--red);
+    color: white;
+    padding: 5px 8px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 0px;
+}
+
+button:hover {
+    background-color: var(--redDarked);
+}
+
+select {
+    padding: 10px;
+}
+
+input {
+    padding: 5px;
+    background-color: white;
+    text: black;
+    border-radius: 30px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-image: url("./assets/dirt.jpg");
+    position: relative;
+    width: 1000px;
+    height: 600px;
+}
+
+.select {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+    display: none;
+}
+
+.select-img {
+    display: flex;
+}
+
+.select-img img + img {
+    margin-left: 10px;
+}
+
+.select h1 {
+    margin-bottom: 20px;
+}
+.select button {
+    margin: 10px;
+}
+
+.select img {
+    cursor: pointer;
+    transition: all 1s ease;
+}
+.select img:hover {
+    width: 80px;
+    height: 80px;
+}
+
+.select-img img {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+}
+
+.start {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 30px;
+}
+
+.start input {
+    margin: 10px 0px;
+}
+
+.start button {
+    margin: 10px 0px;
+}
+
+#aggree {
+    display: none;
+}
+
+.start ul {
+    text-align: left;
+    margin: 20px 40px;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+#myCanvas {
+    width: 100%;
+    height: 100%;
+    border: 1px solid white;
+}
+
+.last {
+    display: none;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+.title {
+    font-size: 35px;
+    color: white;
+    /* padding: px 0; */
+}
+
+#writeInTheMiddle {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    font-size: 60px;
+    font-bold: 1000;
+    display: none;
+}
+
+#lifetime {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-weigth: 1000;
+    font-size: 20px;
+    display: none;
+}
+
+.coin {
+    position: absolute;
+    top: 1%;
+    right: 1%;
+}
+
+.pause {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    display: none;
+}
+
+.pause img {
+    cursor: pointer;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    width: 300px;
+}
+
+.leaderboard {
+    background-image: url("/assets/stone.png");
+    background-size: cover;
+    border: 1px solid white;
+    position: relative;
+    text-align: center;
+}
+.leaderboard h1 {
+    margin-top: 30px;
+    padding: 0px 30px;
+}
+
+#game-over-text {
+    font-weight: 1000;
+}
+#last-save {
+    margin-top: 10px;
+}
+#last-restart {
+    margin-top: 10px;
+}
+
+.add-black {
+    background-color: rgb(0, 0, 0, 0.5);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: none;
+    z-index: 5;
+}
+
+#close-detail-popup {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.detail-popup table {
+    margin: 60px auto;
+    font-weight: 1000;
+    font-size: 25px;
+}
+.detail-popup {
+    z-index: 10;
+    color: white;
+    background-image: url("/assets/Elements/detail.png");
+    background-size: cover;
+    width: 300px;
+    height: 200px;
+    padding: 50px;
+    display: none;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+
+.spin-wheel {
+    z-index: 10;
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    background-color: white;
+    border: 3px solid black;
+    transition: 3s;
+    transform: rotate(360deg);
+    overflow: hidden;
+}
+
+.spin-container {
+    visibility: hidden;
+    left: 50%;
+    top: 50%;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 200px;
+    height: 200px;
+}
+
+#okay-btn {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    bottom: -70px;
+}
+
+.spin-wheel div {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    position: absolute;
+    clip-path: polygon(100% 0, 50% 100%, 0 0);
+    transform: translateX(-50%);
+    transform-origin: bottom;
+    text-align: center;
+    aligm-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: white;
+}
+
+.arrow {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 43%;
+    top: -20px;
+    background-image: url("./assets/arrow.png");
+    transform: rotate(270deg);
+    background-size: cover;
+    border-radius: 1px solid black;
+    z-index: 20;
+}
+
+.spin-wheel img {
+    width: 50px;
+    height: 50px;
+}
+
+.spin-wheel .spin-hero-1 {
+    background-color: var(--background);
+    left: 50%;
+}
+.spin-wheel .spin-hero-2 {
+    background-color: var(--darkerBackground);
+    transform: rotate(90deg);
+}
+.spin-wheel .spin-hero-3 {
+    background-color: var(--background);
+    transform: rotate(180deg);
+}
+.spin-wheel .spin-hero-4 {
+    background-color: var(--darkerBackground);
+    transform: rotate(270deg);
+}
+
+#last-back {
+    margin-top: 20px;
+}
