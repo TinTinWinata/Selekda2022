@@ -10,10 +10,10 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 export default function CreateUser() {
     const { getConf } = useUserAuth();
     const { id } = useParams();
+    const navigate = useNavigate();
 
     function handleSubmit(e) {
         e.preventDefault();
-        const navigate = useNavigate();
 
         const name = e.target.name.value;
         const username = e.target.username.value;
