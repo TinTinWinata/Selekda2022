@@ -37,8 +37,7 @@ class DatabaseSeeder extends Seeder
             'role' => 'admin',
         ]);
 
-        Board::factory(10)->create();
-
+        // Board::factory(10)->create();
 
         Banner::factory()->create([
             'imageUrl' => '/assets/landing/bg.png',
@@ -61,7 +60,7 @@ class DatabaseSeeder extends Seeder
             'status' => 'active',
             'title' => '<3'
         ]);
-        
+
 
         Captcha::factory()->create([
             'imageUrl' => '/captcha/captcha_1.png',

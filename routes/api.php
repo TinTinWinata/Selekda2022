@@ -39,6 +39,7 @@ Route::middleware(['auth:api'])->group(function () {
     Route::put('/update-user/{id}', [UserController::class, 'updateUser']);
     Route::put('/change-password/{id}', [UserController::class, 'changePassword']);
     // Route::apiResource('board', BoardController::class);
+    Route::post('/update-image', [UserController::class, 'updateImage']);
     Route::get('/logout', [LoginController::class, 'logout']);
     Route::post('/save-leaderboard', [BoardController::class, 'store']);
     Route::get('/all-squad', [SquadController::class, 'index']);

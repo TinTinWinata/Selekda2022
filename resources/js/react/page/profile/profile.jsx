@@ -7,10 +7,38 @@ import { useUserAuth } from "../../hooks/userAuthContext";
 import "./profile.css";
 
 export default function Profile() {
-    const { user, updateUser, changePassword, getConf, getUser, logout } =
-        useUserAuth();
+    const navigate = useNavigate();
+
+    const {
+        setAllUser,
+        user,
+        updateUser,
+        changePassword,
+        getConf,
+        getUser,
+        logout,
+    } = useUserAuth();
 
     const userLocal = getUser();
+
+    function handleOnChange(e) {
+        const img = e.target.files[0];
+        const data = new FormData();
+        data.append("image", img);
+        data.append("id", user.id);
+
+        axios
+            .post("/api/update-image", data, getConf())
+            .then((resp) => {
+                user.photoProfileUrl = resp.data.url;
+                setAllUser(user);
+                toastSuccess(resp.data.message);
+            })
+            .catch((err) => {
+                console.log(err);
+                toastError(err.response.data);
+            });
+    }
 
     function handleChangePassword(e) {
         e.preventDefault();
@@ -42,7 +70,6 @@ export default function Profile() {
         updateUser(data);
     }
 
-    const navigate = useNavigate();
     function handleLogout() {
         logout()
             .then((resp) => {
@@ -63,7 +90,28 @@ export default function Profile() {
             <div className="square-image"></div>
             <div className="line"></div>
             <div className="title">
-                <img src="../assets/profile/example_2.jpg" alt="" />
+                <input
+                    className="hidden"
+                    id="file-input"
+                    type="file"
+                    name="myImage"
+                    accept="image/png, image/gif, image/jpeg"
+                    onChange={handleOnChange}
+                ></input>
+
+                <label htmlFor="file-input">
+                    {user ? (
+                        <img
+                            className="cursor-pointer"
+                            src={
+                                user.photoProfileUrl ? user.photoProfileUrl : ""
+                            }
+                            alt=""
+                        />
+                    ) : (
+                        ""
+                    )}
+                </label>
                 <div className="flex title-flex">
                     <div></div>
                     <h1 className="barlow">

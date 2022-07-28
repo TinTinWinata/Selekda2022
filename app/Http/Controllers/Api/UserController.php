@@ -150,6 +150,35 @@ class UserController extends Controller
         }
     }
 
+    public function updateImage(Request $request)
+    {
+        $currUser = Auth::user();
+        $user = User::where('id', $request->id)->first();
+
+
+
+
+        if (!$user)
+            return response()->json("User does not exist", 404);
+        if ($currUser->id !== $user->id) {
+            return response()->json("You cannot update someone image!", 404);
+        }
+
+        $request->validate(['image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048']);
+
+        $imageName =  time() . $request->image->getClientOriginalName();
+
+        $imageUrl = "/images/" . $imageName;
+        $request->image->move(public_path('images\\'), $imageName);
+
+        $user->photoProfileUrl = $imageUrl;
+        $user->save();
+
+        $message = "Succesfully updating user profile";
+
+        return response()->json(["message" => $message, 'url' => $imageUrl], 200);
+    }
+
     public function updateUserAdmin(Request $request)
     {
         $request->validate([

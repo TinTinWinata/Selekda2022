@@ -189,7 +189,7 @@ export default function Home() {
                         alt=""
                     />
                     <div className="search-content">
-                        <h1>Search Other User</h1>
+                        <h1 className="">Search Other User</h1>
                         <input className="text-black" type="text" />
                         <button>Search Now</button>
                     </div>

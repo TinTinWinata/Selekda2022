@@ -10,12 +10,12 @@ body {
 }
 
 :root {
-    --red: #6a0000;
+    --redA: #6a0000;
     --redDarked: #420000;
 }
 
 button {
-    background-color: var(--red);
+    background-color: var(--redA);
     color: white;
     padding: 15px 20px;
     border-radius: 25px;

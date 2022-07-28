@@ -107,7 +107,7 @@ class BannerController extends Controller
 
     public function randomBanner($n)
     {
-        $banner = Banner::take($n)->get();
+        $banner = Banner::where('status', 'active')->inRandomOrder()->limit($n)->get();
         return response()->json($banner, 200);
     }
 

@@ -79,6 +79,10 @@ export function UserAuthContextProvider({ children }) {
     function setUserLocal(user) {
         localStorage.setItem(USER_KEY, JSON.stringify(user));
     }
+    function setAllUser(user) {
+        setUser(user);
+        setUserLocal(user);
+    }
 
     function getConf() {
         const config = {
@@ -193,6 +197,7 @@ export function UserAuthContextProvider({ children }) {
                 login,
                 logout,
                 register,
+                setAllUser,
             }}
         >
             {children}

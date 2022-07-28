@@ -125,7 +125,7 @@ export default function Navbar() {
                             <img
                                 id="imgPhoto"
                                 onClick={handleProfile}
-                                className="w-2 h-2 photo-profile cursor-pointer rounded-full"
+                                className="border border-white w-2 h-2 photo-profile cursor-pointer rounded-full"
                                 src={
                                     user.photoProfileUrl
                                         ? user.photoProfileUrl
